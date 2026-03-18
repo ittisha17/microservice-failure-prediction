@@ -1,0 +1,109 @@
+{
+  "num_nodes": 6,
+  "num_edges": 5,
+  "node_features": [
+    {
+      "node_id": 0,
+      "service_name": "frontend",
+      "in_degree": 0,
+      "out_degree": 3,
+      "criticality_score": 0.0346,
+      "total_incoming_calls": 0
+    },
+    {
+      "node_id": 1,
+      "service_name": "driver",
+      "in_degree": 1,
+      "out_degree": 1,
+      "criticality_score": 0.132,
+      "total_incoming_calls": 108
+    },
+    {
+      "node_id": 2,
+      "service_name": "customer",
+      "in_degree": 1,
+      "out_degree": 1,
+      "criticality_score": 0.132,
+      "total_incoming_calls": 108
+    },
+    {
+      "node_id": 3,
+      "service_name": "mysql",
+      "in_degree": 1,
+      "out_degree": 0,
+      "criticality_score": 0.1461,
+      "total_incoming_calls": 108
+    },
+    {
+      "node_id": 4,
+      "service_name": "route",
+      "in_degree": 1,
+      "out_degree": 0,
+      "criticality_score": 0.1391,
+      "total_incoming_calls": 1080
+    },
+    {
+      "node_id": 5,
+      "service_name": "redis-manual",
+      "in_degree": 1,
+      "out_degree": 0,
+      "criticality_score": 0.1461,
+      "total_incoming_calls": 1458
+    }
+  ],
+  "edge_list": [
+    {
+      "source": 0,
+      "target": 1,
+      "source_name": "frontend",
+      "target_name": "driver",
+      "weight": 0.0377,
+      "call_count": 108,
+      "avg_duration_ms": 219.1
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "source_name": "frontend",
+      "target_name": "route",
+      "weight": 0.3774,
+      "call_count": 1080,
+      "avg_duration_ms": 49.72
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "source_name": "frontend",
+      "target_name": "customer",
+      "weight": 0.0377,
+      "call_count": 108,
+      "avg_duration_ms": 310.28
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "source_name": "driver",
+      "target_name": "redis-manual",
+      "weight": 0.5094,
+      "call_count": 1458,
+      "avg_duration_ms": 16.05
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "source_name": "customer",
+      "target_name": "mysql",
+      "weight": 0.0377,
+      "call_count": 108,
+      "avg_duration_ms": 309.12
+    }
+  ],
+  "service_names": [
+    "frontend",
+    "driver",
+    "customer",
+    "mysql",
+    "route",
+    "redis-manual"
+  ]
+}
