@@ -1,0 +1,12 @@
+{
+  "fault_service": "mysql",
+  "predictions": {
+    "frontend": 0.5781,
+    "driver": 0.1711,
+    "customer": 0.1711,
+    "mysql": 0.6368,
+    "route": 0.0,
+    "redis-manual": 0.0
+  },
+  "report": "## INCIDENT SUMMARY\nA failure has been detected in the mysql microservice, which is a critical dependency for several other services. The failure is expected to have a significant impact on the overall system, with multiple services at risk of cascading failures.\n\n## PREDICTED IMPACT\nThe predicted impact is high, with the frontend service at 57.8% failure probability, and the driver and customer services at 17.1% failure probability. These services are affected due to their dependencies on the mysql service, with the customer service having a direct dependency edge with a weight of 0.0377 and average latency of 309.12ms.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: (1) investigate the mysql service logs to identify the root cause of the failure, (2) attempt to restart the mysql service to see if it resolves the issue, and (3) prepare a backup plan to failover to a redundant database instance if the primary instance is unrecoverable.\n\n## TEAMS TO NOTIFY\nThe teams that should be notified are the frontend, driver, and customer teams, as their services are at high risk of being impacted by the mysql failure.\n\n## RISK ASSESSMENT\nThe overall system risk level is high due to the critical nature of the mysql service and its dependencies, which could lead to a significant disruption of business operations if not resolved promptly."
+}

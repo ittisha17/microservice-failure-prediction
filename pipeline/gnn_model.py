@@ -174,7 +174,7 @@ def evaluate_model(model, graph, labels):
     print(f"  HR@3 (Top-3 Accuracy):       {correct_top3}/{len(labels)}")
     print("=" * 55)
 
-    return mae, mse, loss_history_global
+    return mae, mse
 
 # ── Plot training loss ────────────────────────────────────────────────────────
 def plot_loss(loss_history):
@@ -186,7 +186,7 @@ def plot_loss(loss_history):
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
     plt.savefig("training_loss.png", dpi=150)
-    plt.show()
+    plt.close()
     print("training_loss.png saved")
 
 # ── Save model ────────────────────────────────────────────────────────────────
@@ -207,7 +207,7 @@ def main():
     loss_history_global = loss_history
 
     # Evaluate
-    evaluate_model(model, graph, labels)
+    mae, mse = evaluate_model(model, graph, labels)
 
     # Plot and save
     plot_loss(loss_history)

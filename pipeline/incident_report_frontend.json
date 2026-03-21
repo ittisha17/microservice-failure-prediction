@@ -1,0 +1,12 @@
+{
+  "fault_service": "frontend",
+  "predictions": {
+    "frontend": 0.9995,
+    "driver": 0.0002,
+    "customer": 0.0002,
+    "mysql": 0.0,
+    "route": 0.0,
+    "redis-manual": 0.0
+  },
+  "report": "## INCIDENT SUMMARY\nA failure has been detected in the frontend microservice, which may impact user-facing functionality. The failure is currently being assessed for root cause and potential downstream effects.\n\n## PREDICTED IMPACT\nThe predicted impact is relatively contained, with no downstream services significantly affected (>10% failure probability). The services with relevant dependency edges to frontend, such as driver, route, and customer, are not expected to be severely impacted due to the low weights and average latencies of these edges.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: (1) verify the frontend service's deployment configuration and recent changes, (2) check the service's logs for error patterns or anomalies, and (3) attempt a rolling restart of the frontend service to assess if the issue is transient.\n\n## TEAMS TO NOTIFY\nThe teams to notify based on affected services are the Frontend Engineering team, as the primary owners of the impacted service, and optionally the Route and Customer teams for awareness, given their services' dependency edges to frontend.\n\n## RISK ASSESSMENT\nThe overall system risk level is moderate, as the failure of the frontend microservice has the potential to impact user experience, but the predicted blast radius suggests that the impact will be relatively contained."
+}
