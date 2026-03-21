@@ -1,0 +1,86 @@
+[
+  {
+    "scenario_id": 1,
+    "fault_service": "frontend",
+    "blast_radius": {
+      "frontend": 1.0,
+      "driver": 0.0,
+      "customer": 0.0,
+      "mysql": 0.0,
+      "route": 0.0,
+      "redis-manual": 0.0
+    },
+    "total_spans": 8098,
+    "error_spans": 2692
+  },
+  {
+    "scenario_id": 2,
+    "fault_service": "driver",
+    "blast_radius": {
+      "driver": 1.0,
+      "frontend": 0.6,
+      "customer": 0.0,
+      "mysql": 0.0,
+      "route": 0.0,
+      "redis-manual": 0.0
+    },
+    "total_spans": 8098,
+    "error_spans": 1814
+  },
+  {
+    "scenario_id": 3,
+    "fault_service": "customer",
+    "blast_radius": {
+      "customer": 1.0,
+      "frontend": 0.6,
+      "driver": 0.0,
+      "mysql": 0.0,
+      "route": 0.0,
+      "redis-manual": 0.0
+    },
+    "total_spans": 8098,
+    "error_spans": 1793
+  },
+  {
+    "scenario_id": 4,
+    "fault_service": "mysql",
+    "blast_radius": {
+      "mysql": 1.0,
+      "customer": 0.6,
+      "frontend": 0.4,
+      "driver": 0.0,
+      "route": 0.0,
+      "redis-manual": 0.0
+    },
+    "total_spans": 8098,
+    "error_spans": 1451
+  },
+  {
+    "scenario_id": 5,
+    "fault_service": "route",
+    "blast_radius": {
+      "route": 1.0,
+      "frontend": 0.6,
+      "driver": 0.0,
+      "customer": 0.0,
+      "mysql": 0.0,
+      "redis-manual": 0.0
+    },
+    "total_spans": 8098,
+    "error_spans": 3630
+  },
+  {
+    "scenario_id": 6,
+    "fault_service": "redis-manual",
+    "blast_radius": {
+      "redis-manual": 1.0,
+      "driver": 0.6,
+      "frontend": 0.4,
+      "customer": 0.0,
+      "mysql": 0.0,
+      "route": 0.0
+    },
+    "total_spans": 8098,
+    "error_spans": 3929
+  }
+]
