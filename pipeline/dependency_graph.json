@@ -4,6 +4,22 @@
   "node_features": [
     {
       "node_id": 0,
+      "service_name": "customer",
+      "in_degree": 1,
+      "out_degree": 1,
+      "criticality_score": 0.132,
+      "total_incoming_calls": 1200
+    },
+    {
+      "node_id": 1,
+      "service_name": "mysql",
+      "in_degree": 1,
+      "out_degree": 0,
+      "criticality_score": 0.1461,
+      "total_incoming_calls": 1200
+    },
+    {
+      "node_id": 2,
       "service_name": "frontend",
       "in_degree": 0,
       "out_degree": 3,
@@ -11,28 +27,12 @@
       "total_incoming_calls": 0
     },
     {
-      "node_id": 1,
+      "node_id": 3,
       "service_name": "driver",
       "in_degree": 1,
       "out_degree": 1,
       "criticality_score": 0.132,
-      "total_incoming_calls": 108
-    },
-    {
-      "node_id": 2,
-      "service_name": "customer",
-      "in_degree": 1,
-      "out_degree": 1,
-      "criticality_score": 0.132,
-      "total_incoming_calls": 108
-    },
-    {
-      "node_id": 3,
-      "service_name": "mysql",
-      "in_degree": 1,
-      "out_degree": 0,
-      "criticality_score": 0.1461,
-      "total_incoming_calls": 108
+      "total_incoming_calls": 1200
     },
     {
       "node_id": 4,
@@ -40,7 +40,7 @@
       "in_degree": 1,
       "out_degree": 0,
       "criticality_score": 0.1391,
-      "total_incoming_calls": 1080
+      "total_incoming_calls": 12000
     },
     {
       "node_id": 5,
@@ -48,61 +48,61 @@
       "in_degree": 1,
       "out_degree": 0,
       "criticality_score": 0.1461,
-      "total_incoming_calls": 1458
+      "total_incoming_calls": 16200
     }
   ],
   "edge_list": [
     {
       "source": 0,
       "target": 1,
-      "source_name": "frontend",
-      "target_name": "driver",
+      "source_name": "customer",
+      "target_name": "mysql",
       "weight": 0.0377,
-      "call_count": 108,
-      "avg_duration_ms": 219.1
+      "call_count": 1200,
+      "avg_duration_ms": 300.91
     },
     {
-      "source": 0,
-      "target": 4,
-      "source_name": "frontend",
-      "target_name": "route",
-      "weight": 0.3774,
-      "call_count": 1080,
-      "avg_duration_ms": 49.72
-    },
-    {
-      "source": 0,
-      "target": 2,
+      "source": 2,
+      "target": 0,
       "source_name": "frontend",
       "target_name": "customer",
       "weight": 0.0377,
-      "call_count": 108,
-      "avg_duration_ms": 310.28
-    },
-    {
-      "source": 1,
-      "target": 5,
-      "source_name": "driver",
-      "target_name": "redis-manual",
-      "weight": 0.5094,
-      "call_count": 1458,
-      "avg_duration_ms": 16.05
+      "call_count": 1200,
+      "avg_duration_ms": 301.39
     },
     {
       "source": 2,
       "target": 3,
-      "source_name": "customer",
-      "target_name": "mysql",
+      "source_name": "frontend",
+      "target_name": "driver",
       "weight": 0.0377,
-      "call_count": 108,
-      "avg_duration_ms": 309.12
+      "call_count": 1200,
+      "avg_duration_ms": 209.78
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "source_name": "frontend",
+      "target_name": "route",
+      "weight": 0.3774,
+      "call_count": 12000,
+      "avg_duration_ms": 50.45
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "source_name": "driver",
+      "target_name": "redis-manual",
+      "weight": 0.5094,
+      "call_count": 16200,
+      "avg_duration_ms": 15.44
     }
   ],
   "service_names": [
-    "frontend",
-    "driver",
     "customer",
     "mysql",
+    "frontend",
+    "driver",
     "route",
     "redis-manual"
   ]

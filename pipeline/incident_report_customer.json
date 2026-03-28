@@ -1,12 +1,12 @@
 {
   "fault_service": "customer",
   "predictions": {
-    "frontend": 0.5781,
-    "driver": 0.1711,
-    "customer": 0.9679,
+    "customer": 0.9921,
     "mysql": 0.0,
-    "route": 0.0,
-    "redis-manual": 0.0
+    "frontend": 0.4794,
+    "driver": 0.1022,
+    "route": 0.1316,
+    "redis-manual": 0.1569
   },
-  "report": "**INCIDENT SUMMARY**\nA failure has been detected in the customer service, with potential cascading effects on dependent services. The GNN Blast Radius Predictions indicate a high probability of failure in the frontend service, which may impact user experience.\n\n**PREDICTED IMPACT**\nThe predicted impact includes a 57.8% failure probability in the frontend service and a 17.1% failure probability in the driver service, which may lead to errors and disruptions for end-users.\n\n**IMMEDIATE ACTIONS**\n1. Investigate the customer service failure to identify the root cause and potential fixes.\n2. Monitor the frontend and driver services for signs of failure and be prepared to implement mitigations.\n3. Run a targeted health check on the mysql service, given its dependency on the customer service, to ensure it remains stable.\n\n**TEAMS TO NOTIFY**\nThe frontend, driver, and database teams should be notified of the potential impact and prepared to respond to any issues that may arise.\n\n**RISK ASSESSMENT**\nThe failure of the customer service poses a high risk to the overall system stability and user experience, requiring prompt attention and resolution to prevent further cascading failures."
+  "report": "## INCIDENT SUMMARY\nA failure has been detected in the customer microservice, which may have a cascading impact on other services. The GNN Blast Radius Predictions indicate a high failure probability for several dependent services.\n\n## PREDICTED IMPACT\nThe frontend, redis-manual, route, and driver services are predicted to be affected with failure probabilities of 47.9%, 15.7%, 13.2%, and 10.2% respectively, due to their dependencies on the customer microservice. The severity of the impact is moderate to high, as these services are critical to the overall functionality of the system.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: (1) investigate the customer microservice logs to identify the root cause of the failure, (2) restart the customer microservice to attempt a quick recovery, and (3) monitor the dependent services for signs of failure or degradation.\n\n## TEAMS TO NOTIFY\nThe frontend, redis, route, and driver teams should be notified of the potential impact on their services, as they may need to take corrective actions or prepare for potential failures.\n\n## RISK ASSESSMENT\nThe overall system risk level is moderate, as the failure of the customer microservice has the potential to impact multiple critical services, but the mysql service remains unaffected, providing a potential fallback or mitigation option."
 }

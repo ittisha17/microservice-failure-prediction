@@ -1,52 +1,52 @@
 [
   {
     "scenario_id": 1,
-    "fault_service": "frontend",
+    "fault_service": "customer",
     "fault_node_idx": 0,
     "label_vector": [
       1.0,
       0.0,
-      0.0,
+      0.6,
       0.0,
       0.0,
       0.0
     ],
     "service_names": [
-      "frontend",
-      "driver",
       "customer",
       "mysql",
+      "frontend",
+      "driver",
       "route",
       "redis-manual"
     ]
   },
   {
     "scenario_id": 2,
-    "fault_service": "driver",
+    "fault_service": "mysql",
     "fault_node_idx": 1,
     "label_vector": [
       0.6,
       1.0,
-      0.0,
+      0.4,
       0.0,
       0.0,
       0.0
     ],
     "service_names": [
-      "frontend",
-      "driver",
       "customer",
       "mysql",
+      "frontend",
+      "driver",
       "route",
       "redis-manual"
     ]
   },
   {
     "scenario_id": 3,
-    "fault_service": "customer",
+    "fault_service": "frontend",
     "fault_node_idx": 2,
     "label_vector": [
-      0.6,
+      0.0,
       0.0,
       1.0,
       0.0,
@@ -54,20 +54,20 @@
       0.0
     ],
     "service_names": [
-      "frontend",
-      "driver",
       "customer",
       "mysql",
+      "frontend",
+      "driver",
       "route",
       "redis-manual"
     ]
   },
   {
     "scenario_id": 4,
-    "fault_service": "mysql",
+    "fault_service": "driver",
     "fault_node_idx": 3,
     "label_vector": [
-      0.4,
+      0.0,
       0.0,
       0.6,
       1.0,
@@ -75,10 +75,10 @@
       0.0
     ],
     "service_names": [
-      "frontend",
-      "driver",
       "customer",
       "mysql",
+      "frontend",
+      "driver",
       "route",
       "redis-manual"
     ]
@@ -88,18 +88,18 @@
     "fault_service": "route",
     "fault_node_idx": 4,
     "label_vector": [
+      0.0,
+      0.0,
       0.6,
-      0.0,
-      0.0,
       0.0,
       1.0,
       0.0
     ],
     "service_names": [
-      "frontend",
-      "driver",
       "customer",
       "mysql",
+      "frontend",
+      "driver",
       "route",
       "redis-manual"
     ]
@@ -109,18 +109,18 @@
     "fault_service": "redis-manual",
     "fault_node_idx": 5,
     "label_vector": [
+      0.0,
+      0.0,
       0.4,
       0.6,
-      0.0,
-      0.0,
       0.0,
       1.0
     ],
     "service_names": [
-      "frontend",
-      "driver",
       "customer",
       "mysql",
+      "frontend",
+      "driver",
       "route",
       "redis-manual"
     ]

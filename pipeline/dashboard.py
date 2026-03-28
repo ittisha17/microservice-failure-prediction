@@ -98,14 +98,11 @@ def generate_report(client, fault_service, predictions, graph):
     prompt = f"""You are a senior Site Reliability Engineer.
 
 A failure has been detected in: {fault_service}
-
 GNN Blast Radius Predictions:
 AFFECTED SERVICES (>10% failure probability):
 {affected_str}
-
 Relevant dependency edges:
 {edges_str}
-
 Generate a concise incident report with these sections:
 1. INCIDENT SUMMARY (2 sentences)
 2. PREDICTED IMPACT

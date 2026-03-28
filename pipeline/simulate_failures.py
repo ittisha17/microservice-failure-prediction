@@ -133,7 +133,7 @@ def main():
         json.dump(training_data, f, indent=2)
 
     print("\n" + "=" * 55)
-    print("DAY 3 COMPLETE")
+    # print("DAY 3 COMPLETE")
     print("=" * 55)
     print(f"  fault_scenarios.json     — {len(scenarios)} scenarios")
     print(f"  gnn_training_labels.json — {len(training_data)} labelled training samples")

@@ -1,48 +1,20 @@
 [
   {
     "scenario_id": 1,
-    "fault_service": "frontend",
-    "blast_radius": {
-      "frontend": 1.0,
-      "driver": 0.0,
-      "customer": 0.0,
-      "mysql": 0.0,
-      "route": 0.0,
-      "redis-manual": 0.0
-    },
-    "total_spans": 8098,
-    "error_spans": 2692
-  },
-  {
-    "scenario_id": 2,
-    "fault_service": "driver",
-    "blast_radius": {
-      "driver": 1.0,
-      "frontend": 0.6,
-      "customer": 0.0,
-      "mysql": 0.0,
-      "route": 0.0,
-      "redis-manual": 0.0
-    },
-    "total_spans": 8098,
-    "error_spans": 1814
-  },
-  {
-    "scenario_id": 3,
     "fault_service": "customer",
     "blast_radius": {
       "customer": 1.0,
       "frontend": 0.6,
-      "driver": 0.0,
       "mysql": 0.0,
+      "driver": 0.0,
       "route": 0.0,
       "redis-manual": 0.0
     },
-    "total_spans": 8098,
-    "error_spans": 1793
+    "total_spans": 47400,
+    "error_spans": 10500
   },
   {
-    "scenario_id": 4,
+    "scenario_id": 2,
     "fault_service": "mysql",
     "blast_radius": {
       "mysql": 1.0,
@@ -52,8 +24,36 @@
       "route": 0.0,
       "redis-manual": 0.0
     },
-    "total_spans": 8098,
-    "error_spans": 1451
+    "total_spans": 47400,
+    "error_spans": 8190
+  },
+  {
+    "scenario_id": 3,
+    "fault_service": "frontend",
+    "blast_radius": {
+      "frontend": 1.0,
+      "customer": 0.0,
+      "mysql": 0.0,
+      "driver": 0.0,
+      "route": 0.0,
+      "redis-manual": 0.0
+    },
+    "total_spans": 47400,
+    "error_spans": 15600
+  },
+  {
+    "scenario_id": 4,
+    "fault_service": "driver",
+    "blast_radius": {
+      "driver": 1.0,
+      "frontend": 0.6,
+      "customer": 0.0,
+      "mysql": 0.0,
+      "route": 0.0,
+      "redis-manual": 0.0
+    },
+    "total_spans": 47400,
+    "error_spans": 10525
   },
   {
     "scenario_id": 5,
@@ -61,13 +61,13 @@
     "blast_radius": {
       "route": 1.0,
       "frontend": 0.6,
-      "driver": 0.0,
       "customer": 0.0,
       "mysql": 0.0,
+      "driver": 0.0,
       "redis-manual": 0.0
     },
-    "total_spans": 8098,
-    "error_spans": 3630
+    "total_spans": 47400,
+    "error_spans": 21398
   },
   {
     "scenario_id": 6,
@@ -80,7 +80,7 @@
       "mysql": 0.0,
       "route": 0.0
     },
-    "total_spans": 8098,
-    "error_spans": 3929
+    "total_spans": 47400,
+    "error_spans": 23172
   }
 ]

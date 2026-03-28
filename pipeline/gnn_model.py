@@ -203,7 +203,7 @@ def main():
     graph, labels = load_graph_and_labels()
 
     # Train
-    model, loss_history = train_model(graph, labels, epochs=500, lr=0.005)
+    model, loss_history = train_model(graph, labels, epochs=800, lr=0.005)
     loss_history_global = loss_history
 
     # Evaluate

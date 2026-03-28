@@ -1,12 +1,12 @@
 {
   "fault_service": "mysql",
   "predictions": {
-    "frontend": 0.5781,
-    "driver": 0.1711,
-    "customer": 0.1711,
-    "mysql": 0.6368,
-    "route": 0.0,
-    "redis-manual": 0.0
+    "customer": 0.1022,
+    "mysql": 0.6029,
+    "frontend": 0.4794,
+    "driver": 0.1022,
+    "route": 0.1316,
+    "redis-manual": 0.1569
   },
-  "report": "## INCIDENT SUMMARY\nA failure has been detected in the mysql microservice, which is a critical dependency for several other services. The failure is expected to have a significant impact on the overall system, with multiple services at risk of cascading failures.\n\n## PREDICTED IMPACT\nThe predicted impact is high, with the frontend service at 57.8% failure probability, and the driver and customer services at 17.1% failure probability. These services are affected due to their dependencies on the mysql service, with the customer service having a direct dependency edge with a weight of 0.0377 and average latency of 309.12ms.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: (1) investigate the mysql service logs to identify the root cause of the failure, (2) attempt to restart the mysql service to see if it resolves the issue, and (3) prepare a backup plan to failover to a redundant database instance if the primary instance is unrecoverable.\n\n## TEAMS TO NOTIFY\nThe teams that should be notified are the frontend, driver, and customer teams, as their services are at high risk of being impacted by the mysql failure.\n\n## RISK ASSESSMENT\nThe overall system risk level is high due to the critical nature of the mysql service and its dependencies, which could lead to a significant disruption of business operations if not resolved promptly."
+  "report": "## INCIDENT SUMMARY\nA failure has been detected in the mysql microservice, which may cause cascading failures in dependent services. The GNN Blast Radius Predictions indicate a significant failure probability in several services that rely on mysql.\n\n## PREDICTED IMPACT\nThe predicted impact is moderate to high, with the frontend service having a 47.9% failure probability, followed by redis-manual, route, customer, and driver services with lower but still significant probabilities. These services are affected due to their dependencies on the mysql service, particularly the customer service which has a direct dependency edge with an average latency of 300.91ms.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: \n1. Investigate the mysql service logs to identify the root cause of the failure.\n2. Check the customer service for any errors or anomalies related to the mysql dependency.\n3. Initiate a rolling restart of the mysql service to attempt to recover from the failure.\n\n## TEAMS TO NOTIFY\nThe teams responsible for the frontend, customer, and driver services should be notified due to the potential impact on their services.\n\n## RISK ASSESSMENT\nThe overall system risk level is moderate, as the failure of the mysql service has the potential to cause significant disruptions to multiple dependent services, but the blast radius predictions provide a clear indication of the affected areas, allowing for targeted mitigation efforts."
 }

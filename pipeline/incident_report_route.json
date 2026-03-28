@@ -1,0 +1,12 @@
+{
+  "fault_service": "route",
+  "predictions": {
+    "customer": 0.1022,
+    "mysql": 0.0317,
+    "frontend": 0.4794,
+    "driver": 0.1022,
+    "route": 0.1612,
+    "redis-manual": 0.1569
+  },
+  "report": "## INCIDENT SUMMARY\nA failure has been detected in the **route** microservice, which may have a cascading impact on dependent services. The GNN Blast Radius Predictions indicate a significant failure probability for several key services.\n\n## PREDICTED IMPACT\nThe **frontend**, **redis-manual**, **customer**, and **driver** services are predicted to be affected, with failure probabilities of 47.9%, 15.7%, 10.2%, and 10.2% respectively, due to their dependencies on the **route** service. The severity of the impact is moderate to high, as these services are critical to the overall functionality of the system.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: (1) investigate the **route** service logs to identify the root cause of the failure, (2) verify the **frontend** service's error rates and adjust its load balancing configuration if necessary, and (3) prepare a rollback plan for the **route** service in case the issue persists.\n\n## TEAMS TO NOTIFY\nThe teams responsible for the **frontend**, **customer**, and **driver** services should be notified, as well as the **redis** team due to the potential impact on **redis-manual**.\n\n## RISK ASSESSMENT\nThe overall system risk level is moderate, as the failure of the **route** service has the potential to significantly impact the availability and performance of multiple dependent services."
+}

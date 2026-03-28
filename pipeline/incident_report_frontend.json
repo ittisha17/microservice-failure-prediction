@@ -1,12 +1,12 @@
 {
   "fault_service": "frontend",
   "predictions": {
-    "frontend": 0.9995,
-    "driver": 0.0002,
-    "customer": 0.0002,
-    "mysql": 0.0,
-    "route": 0.0,
-    "redis-manual": 0.0
+    "customer": 0.0003,
+    "mysql": 0.0005,
+    "frontend": 1.0,
+    "driver": 0.0003,
+    "route": 0.0003,
+    "redis-manual": 0.001
   },
-  "report": "## INCIDENT SUMMARY\nA failure has been detected in the frontend microservice, which may impact user-facing functionality. The failure is currently being assessed for root cause and potential downstream effects.\n\n## PREDICTED IMPACT\nThe predicted impact is relatively contained, with no downstream services significantly affected (>10% failure probability). The services with relevant dependency edges to frontend, such as driver, route, and customer, are not expected to be severely impacted due to the low weights and average latencies of these edges.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: (1) verify the frontend service's deployment configuration and recent changes, (2) check the service's logs for error patterns or anomalies, and (3) attempt a rolling restart of the frontend service to assess if the issue is transient.\n\n## TEAMS TO NOTIFY\nThe teams to notify based on affected services are the Frontend Engineering team, as the primary owners of the impacted service, and optionally the Route and Customer teams for awareness, given their services' dependency edges to frontend.\n\n## RISK ASSESSMENT\nThe overall system risk level is moderate, as the failure of the frontend microservice has the potential to impact user experience, but the predicted blast radius suggests that the impact will be relatively contained."
+  "report": "## INCIDENT SUMMARY\nA failure has been detected in the frontend microservice, with no downstream services significantly affected. The failure is currently isolated, but prompt action is required to prevent potential cascading effects.\n\n## PREDICTED IMPACT\nThe customer, driver, and route services may be affected due to their dependencies on the frontend service, with the route service being at higher risk due to its higher weight (0.3774) and lower latency (50.45ms). The severity of the impact is moderate, as these services may experience increased latency or errors, but are not currently experiencing significant failures.\n\n## IMMEDIATE ACTIONS\nThe on-call team should: (1) investigate the frontend service logs to identify the root cause of the failure, (2) verify the health of the customer, driver, and route services, and (3) implement a temporary workaround to reduce the load on the frontend service, such as load shedding or caching.\n\n## TEAMS TO NOTIFY\nThe customer, driver, and route teams should be notified of the potential impact on their services, as well as the development team responsible for the frontend service.\n\n## RISK ASSESSMENT\nThe overall system risk level is moderate, as the failure is currently isolated to the frontend service, but has the potential to affect multiple downstream services if not promptly addressed."
 }
